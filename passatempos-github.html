@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Passatempos — Intercontinental News</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #e8dfc8;
+            color: #222;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .jornal {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 30px;
+            background: #f7f1df;
+            border: 8px double #222;
+            box-sizing: border-box;
+        }
+
+        .cabecalho {
+            text-align: center;
+            border-bottom: 4px solid #222;
+            padding-bottom: 18px;
+        }
+
+        .cabecalho h1 {
+            margin: 0;
+            font-size: 42px;
+            letter-spacing: 3px;
+        }
+
+        .slogan {
+            margin-top: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .data {
+            margin-top: 14px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .editoria {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .editoria h2 {
+            margin: 0;
+            font-size: 30px;
+            letter-spacing: 2px;
+        }
+
+        .pagina {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            margin-top: 30px;
+        }
+
+        .conteudo h1 {
+            font-size: 32px;
+            border-bottom: 2px solid #222;
+            padding-bottom: 8px;
+        }
+
+        .conteudo h2 {
+            margin-top: 30px;
+            font-size: 23px;
+        }
+
+        .conteudo p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .cruzadas {
+            margin: 30px auto;
+            border-collapse: collapse;
+            border: 3px solid #222;
+        }
+
+        .cruzadas td {
+            width: 45px;
+            height: 45px;
+            border: 1px solid #222;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .cruzadas .numero {
+            background: #222;
+            color: #f7f1df;
+        }
+
+        .lista {
+            margin-top: 15px;
+        }
+
+        .lista p {
+            margin: 10px 0;
+        }
+
+        .lazer {
+            margin-top: 35px;
+            padding: 20px;
+            border-top: 2px solid #222;
+            border-bottom: 2px solid #222;
+        }
+
+        .navegacao {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 3px solid #222;
+        }
+
+        .navegacao a {
+            color: #222;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .navegacao a:hover {
+            text-decoration: underline;
+        }
+
+        .rodape {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 2px solid #222;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+            .jornal {
+                margin: 10px;
+                padding: 18px;
+                border-width: 5px;
+            }
+
+            .cabecalho h1 {
+                font-size: 30px;
+            }
+
+            .editoria h2 {
+                font-size: 24px;
+            }
+
+            .conteudo h1 {
+                font-size: 27px;
+            }
+
+            .conteudo p {
+                font-size: 16px;
+            }
+
+            .cruzadas {
+                transform: scale(0.75);
+                transform-origin: top center;
+                margin-bottom: -80px;
+            }
+
+            .cruzadas td {
+                width: 38px;
+                height: 38px;
+            }
+
+            .navegacao {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="jornal">
+
+    <header class="cabecalho">
+        <h1>INTERCONTINENTAL NEWS</h1>
+
+        <div class="slogan">
+            O MUNDO EM UMA SÓ EDIÇÃO
+        </div>
+
+        <div class="data" id="data-edicao">
+            CARREGANDO DATA DA EDIÇÃO...
+        </div>
+    </header>
+
+    <section class="editoria">
+        <h2>PASSATEMPOS</h2>
+
+        <div class="pagina">
+            EDIÇÃO AUTOMÁTICA • PÁGINA 08
+        </div>
+    </section>
+
+    <main class="conteudo">
+
+        <h1>Passatempos</h1>
+
+        <p>
+            <em>Um momento de diversão para acompanhar a sua leitura.</em>
+        </p>
+
+        <h2>Palavras Cruzadas</h2>
+
+        <table class="cruzadas">
+            <tr>
+                <td></td><td class="numero">1</td><td></td><td></td><td></td>
+                <td class="numero">2</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td class="numero">3</td><td></td><td></td><td></td>
+                <td class="numero">4</td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td class="numero">5</td><td></td><td></td>
+                <td></td><td></td><td class="numero">6</td><td></td>
+            </tr>
+            <tr>
+                <td></td><td class="numero">7</td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td class="numero">8</td><td></td>
+                <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td class="numero">9</td><td></td><td></td><td></td><td></td>
+                <td class="numero">10</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td class="numero">11</td><td></td><td></td>
+                <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td class="numero">12</td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td class="numero">13</td>
+                <td></td><td></td><td></td><td></td>
+            </tr>
+        </table>
+
+        <h2>Horizontais</h2>
+
+        <div class="lista">
+            <p><strong>1.</strong> Informação publicada por um jornal.</p>
+            <p><strong>2.</strong> Local onde encontramos livros.</p>
+            <p><strong>3.</strong> Astro que ilumina a Terra durante o dia.</p>
+            <p><strong>4.</strong> Grande extensão de água salgada.</p>
+            <p><strong>5.</strong> Notícia principal de uma edição.</p>
+            <p><strong>6.</strong> Planeta onde vivemos.</p>
+            <p><strong>7.</strong> Publicação diária de notícias.</p>
+        </div>
+
+        <h2>Verticais</h2>
+
+        <div class="lista">
+            <p><strong>1.</strong> Conjunto de páginas impressas ou digitais.</p>
+            <p><strong>2.</strong> Capital do Brasil.</p>
+            <p><strong>3.</strong> Objeto usado para escrever.</p>
+            <p><strong>4.</strong> Período de 24 horas.</p>
+            <p><strong>5.</strong> Espaço destinado às notícias.</p>
+            <p><strong>6.</strong> Nome dado ao nosso planeta.</p>
+        </div>
+
+        <section class="lazer">
+            <h2>Momento de Lazer</h2>
+
+            <p>
+                Depois das notícias, nada melhor do que um pequeno desafio
+                para exercitar a mente. Boa diversão e boa leitura!
+            </p>
+        </section>
+
+    </main>
+
+    <nav class="navegacao">
+        <a href="wtc.html">← ANTERIOR — WTC</a>
+        <a href="horoscopo.html">PRÓXIMA — HORÓSCOPO →</a>
+    </nav>
+
+    <footer class="rodape">
+        INTERCONTINENTAL NEWS — O MUNDO EM UMA SÓ EDIÇÃO
+    </footer>
+
+</div>
+
+<script>
+    function atualizarDataEdicao() {
+        const agora = new Date();
+
+        const dataFormatada = new Intl.DateTimeFormat("pt-BR", {
+            weekday: "long",
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+            timeZone: "America/Sao_Paulo"
+        }).format(agora);
+
+        document.getElementById("data-edicao").textContent =
+            dataFormatada.toLocaleUpperCase("pt-BR");
+    }
+
+    atualizarDataEdicao();
+</script>
+
+</body>
+</html>
