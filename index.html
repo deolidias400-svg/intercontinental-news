@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Intercontinental News — O Mundo em Uma Só Edição</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #e8dfcc;
+            color: #25251f;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .jornal {
+            width: min(1100px, 94%);
+            margin: 25px auto;
+            padding: 30px;
+            background: #fffaf0;
+            border: 1px solid #c6b99e;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .topo {
+            text-align: center;
+            border-bottom: 3px double #263d50;
+            padding-bottom: 22px;
+        }
+
+        .logo {
+            display: block;
+            width: min(180px, 70%);
+            max-height: 160px;
+            object-fit: contain;
+            margin: 0 auto 12px;
+        }
+
+        .slogan {
+            margin: 8px 0 18px;
+            color: #244d69;
+            font-size: clamp(14px, 2.5vw, 20px);
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .data {
+            padding: 12px 0;
+            border-top: 1px solid #b8aa8d;
+            border-bottom: 1px solid #b8aa8d;
+            font-size: 12px;
+            line-height: 1.8;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .titulo-principal {
+            margin: 24px 0 8px;
+            color: #173d59;
+            font-size: clamp(32px, 6vw, 58px);
+            line-height: 1.1;
+        }
+
+        .subtitulo {
+            margin: 0 auto 25px;
+            max-width: 700px;
+            font-size: clamp(16px, 2.5vw, 21px);
+            line-height: 1.5;
+        }
+
+        .chamada {
+            margin: 25px 0;
+            padding: 18px;
+            background: #173d59;
+            color: #fffaf0;
+            text-align: center;
+        }
+
+        .chamada h2 {
+            margin: 0 0 8px;
+            font-size: 23px;
+        }
+
+        .chamada p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .manchete {
+            margin: 28px 0;
+            padding: 24px;
+            background: #f5eedf;
+            border: 1px solid #cbbd9f;
+            border-top: 5px solid #244d69;
+        }
+
+        .manchete-etiqueta {
+            margin: 0 0 12px;
+            color: #244d69;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .manchete h2 {
+            margin: 0 0 14px;
+            color: #173d59;
+            font-size: clamp(23px, 4vw, 34px);
+            line-height: 1.25;
+        }
+
+        .manchete-descricao {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .ler-noticia {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 11px 17px;
+            background: #244d35;
+            color: white;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .ler-noticia:hover {
+            background: #183b27;
+        }
+
+        .grade {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin: 25px 0;
+        }
+
+        .secao {
+            display: block;
+            min-height: 105px;
+            padding: 18px;
+            background: #f5eedf;
+            border: 1px solid #cbbd9f;
+            border-left: 5px solid #244d69;
+            color: #25251f;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .secao:hover {
+            background: #e9ddc3;
+            transform: translateY(-2px);
+        }
+
+        .secao h2 {
+            margin: 0 0 8px;
+            color: #173d59;
+            font-size: 20px;
+        }
+
+        .secao p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .botao {
+            display: block;
+            width: fit-content;
+            max-width: 100%;
+            margin: 28px auto;
+            padding: 15px 25px;
+            background: #244d35;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .botao:hover {
+            background: #183b27;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding-top: 18px;
+            border-top: 3px double #263d50;
+            color: #4b493e;
+            font-size: 12px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .jornal {
+                width: 96%;
+                margin: 10px auto;
+                padding: 17px;
+            }
+
+            .grade {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .secao {
+                min-height: auto;
+            }
+
+            .slogan {
+                letter-spacing: 1px;
+            }
+
+            .manchete {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="jornal">
+
+        <header class="topo">
+            <img
+                class="logo"
+                src="logo-intercontinental-news.png"
+                alt="Logotipo do Intercontinental News"
+            >
+
+            <p class="slogan">O MUNDO EM UMA SÓ EDIÇÃO</p>
+
+            <div class="data">
+                <span id="data-edicao">CARREGANDO DATA...</span>
+                <br>
+                INTERCONTINENTAL NEWS • EDIÇÃO DIGITAL • PÁGINA 00
+            </div>
+
+            <h1 class="titulo-principal">Intercontinental News</h1>
+
+            <p class="subtitulo">
+                Informação, cultura e conhecimento em um só lugar.
+            </p>
+        </header>
+
+        <section class="chamada">
+            <h2>Bem-vindo à nossa edição digital</h2>
+            <p>
+                Notícias, informação, história, ciência, esporte e
+                entretenimento em um único jornal.
+            </p>
+        </section>
+
+        <section class="manchete" aria-labelledby="titulo-manchete">
+            <p class="manchete-etiqueta">📰 MANCHETE DO DIA</p>
+
+            <h2 id="titulo-manchete">Buscando a manchete...</h2>
+
+            <p id="descricao-manchete" class="manchete-descricao">
+                A Redação Digital está consultando as notícias da edição.
+            </p>
+
+            <a
+                id="link-manchete"
+                class="ler-noticia"
+                href="brasil.html"
+            >
+                LER NOTÍCIAS DO BRASIL →
+            </a>
+        </section>
+
+        <section aria-label="Seções do jornal">
+            <div class="grade">
+
+                <a class="secao" href="brasil.html">
+                    <h2>🇧🇷 Brasil</h2>
+                    <p>As notícias e os acontecimentos do nosso país.</p>
+                </a>
+
+                <a class="secao" href="mundo.html">
+                    <h2>🌎 Mundo</h2>
+                    <p>Os principais acontecimentos internacionais.</p>
+                </a>
+
+                <a class="secao" href="hoje-na-historia.html">
+                    <h2>📜 Hoje na História</h2>
+                    <p>Fatos e acontecimentos que marcaram épocas.</p>
+                </a>
+
+                <a class="secao" href="esportes.html">
+                    <h2>⚽ Esportes</h2>
+                    <p>Competições, atletas e notícias esportivas.</p>
+                </a>
+
+                <a class="secao" href="politica.html">
+                    <h2>🏛️ Política</h2>
+                    <p>Decisões, instituições e assuntos políticos.</p>
+                </a>
+
+                <a class="secao" href="wtc.html">
+                    <h2>🌐 WTC — Página Especial</h2>
+                    <p>Memória e história contemporânea.</p>
+                </a>
+
+                <a class="secao" href="economia.html">
+                    <h2>💰 Economia</h2>
+                    <p>Dinheiro, trabalho, mercados e finanças.</p>
+                </a>
+
+                <a class="secao" href="ciencia-tecnologia.html">
+                    <h2>🔬 Ciência e Tecnologia</h2>
+                    <p>Descobertas científicas e novidades tecnológicas.</p>
+                </a>
+
+                <a class="secao" href="passatempos.html">
+                    <h2>🧩 Passatempos</h2>
+                    <p>Desafios e atividades para exercitar a mente.</p>
+                </a>
+
+                <a class="secao" href="horoscopo.html">
+                    <h2>✨ Horóscopo</h2>
+                    <p>Previsões astrológicas e os signos do zodíaco.</p>
+                </a>
+
+            </div>
+        </section>
+
+        <a class="botao" href="brasil.html">
+            PRÓXIMA PÁGINA → BRASIL
+        </a>
+
+        <footer>
+            <strong>INTERCONTINENTAL NEWS © 2026</strong>
+            <br>
+            O MUNDO EM UMA SÓ EDIÇÃO
+            <br>
+            Informação, cultura e conhecimento.
+        </footer>
+
+    </main>
+
+    <script>
+        (function () {
+            const agora = new Date();
+
+            let data = new Intl.DateTimeFormat("pt-BR", {
+                weekday: "long",
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+                timeZone: "America/Sao_Paulo"
+            }).format(agora);
+
+            data = data.replace(/^./, letra => letra.toUpperCase());
+
+            document.getElementById("data-edicao").textContent = data;
+        })();
+    </script>
+
+    <script>
+        function textoSeguro(valor) {
+            if (typeof valor !== "string") {
+                return "";
+            }
+
+            const temporario = document.createElement("div");
+            temporario.innerHTML = valor;
+            return (temporario.textContent || temporario.innerText || "")
+                .replace(/\s+/g, " ")
+                .trim();
+        }
+
+        function encontrarNoticiaBrasil(dados) {
+            if (!Array.isArray(dados)) {
+                return null;
+            }
+
+            // Formato agrupado por editoria:
+            // { editoria: "Brasil", manchete: { titulo: "..." } }
+            const grupoBrasil = dados.find(item =>
+                item &&
+                typeof item.editoria === "string" &&
+                item.editoria.toLowerCase().trim() === "brasil" &&
+                item.manchete &&
+                typeof item.manchete === "object" &&
+                item.manchete.titulo
+            );
+
+            if (grupoBrasil) {
+                return {
+                    titulo: grupoBrasil.manchete.titulo,
+                    descricao:
+                        grupoBrasil.manchete.descricao ||
+                        grupoBrasil.manchete.resumo ||
+                        "",
+                    link:
+                        grupoBrasil.manchete.link ||
+                        grupoBrasil.manchete.url ||
+                        ""
+                };
+            }
+
+            // Formato em que cada notícia é um objeto separado.
+            const noticiaBrasil = dados.find(item => {
+                if (!item || typeof item !== "object") {
+                    return false;
+                }
+
+                const editoria = String(
+                    item.editoria || item.categoria || ""
+                ).toLowerCase().trim();
+
+                return editoria === "brasil" &&
+                    Boolean(item.titulo || item.title);
+            });
+
+            if (noticiaBrasil) {
+                return {
+                    titulo: noticiaBrasil.titulo || noticiaBrasil.title,
+                    descricao:
+                        noticiaBrasil.descricao ||
+                        noticiaBrasil.resumo ||
+                        noticiaBrasil.description ||
+                        "",
+                    link: noticiaBrasil.link || noticiaBrasil.url || ""
+                };
+            }
+
+            return null;
+        }
+
+        async function carregarManchete() {
+            const titulo = document.getElementById("titulo-manchete");
+            const descricao = document.getElementById("descricao-manchete");
+            const link = document.getElementById("link-manchete");
+
+            try {
+                const resposta = await fetch(
+                    "noticias.json?atualizacao=" + Date.now(),
+                    { cache: "no-store" }
+                );
+
+                if (!resposta.ok) {
+                    throw new Error("O arquivo noticias.json não foi encontrado.");
+                }
+
+                const dados = await resposta.json();
+                const noticia = encontrarNoticiaBrasil(dados);
+
+                if (!noticia || !noticia.titulo) {
+                    titulo.textContent = "Notícias da edição";
+                    descricao.textContent =
+                        "Não foi possível identificar automaticamente uma manchete de Brasil no arquivo desta edição. Consulte a página Brasil para ver as notícias disponíveis.";
+                    link.href = "brasil.html";
+                    link.textContent = "ABRIR PÁGINA BRASIL →";
+                    return;
+                }
+
+                titulo.textContent = textoSeguro(noticia.titulo);
+
+                const resumo = textoSeguro(noticia.descricao);
+
+                descricao.textContent = resumo ||
+                    "Leia a notícia na edição do Intercontinental News.";
+
+                // Mantém o leitor dentro do jornal.
+                // O endereço externo da notícia não é aberto automaticamente.
+                link.href = "brasil.html";
+                link.textContent = "LER NOTÍCIAS DO BRASIL →";
+
+            } catch (erro) {
+                console.error("Falha ao carregar a manchete:", erro);
+
+                titulo.textContent = "Acompanhe as notícias do Brasil";
+                descricao.textContent =
+                    "A manchete automática não pôde ser carregada agora. Você pode consultar as notícias diretamente na página Brasil.";
+                link.href = "brasil.html";
+                link.textContent = "ABRIR PÁGINA BRASIL →";
+            }
+        }
+
+        carregarManchete();
+    </script>
+
+    <script>
+        async function registrarVisualizacao() {
+            try {
+                const resposta = await fetch(
+                    "http://localhost:9000/visualizacao",
+                    {
+                        method: "POST"
+                    }
+                );
+
+                if (!resposta.ok) {
+                    throw new Error(
+                        "Não foi possível registrar a visualização."
+                    );
+                }
+
+                const dados = await resposta.json();
+                console.log("Visualização registrada:", dados);
+
+            } catch (erro) {
+                console.log(
+                    "Motor da Redação não está disponível.",
+                    erro
+                );
+            }
+        }
+
+        registrarVisualizacao();
+    </script>
+
+</body>
+</html>

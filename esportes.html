@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Intercontinental News — Esportes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #d4ccb9;
+            color: #171717;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .jornal {
+            width: 94%;
+            max-width: 1450px;
+            margin: 25px auto;
+            background: #f3eedf;
+            min-height: 100vh;
+            padding: 35px 45px 45px;
+            box-shadow: 0 0 18px rgba(0,0,0,0.25);
+        }
+
+        .cabecalho {
+            text-align: center;
+            border-bottom: 5px double #222;
+            padding-bottom: 18px;
+        }
+
+        .nome-jornal {
+            font-size: clamp(34px, 6vw, 76px);
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .slogan {
+            margin-top: 8px;
+            font-family: Arial, sans-serif;
+            font-size: clamp(14px, 2vw, 22px);
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        .data-edicao {
+            margin-top: 18px;
+            font-family: Arial, sans-serif;
+            font-size: clamp(14px, 2vw, 20px);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .titulo-editoria {
+            text-align: center;
+            margin: 28px 0 5px;
+            font-size: clamp(30px, 5vw, 58px);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .linha-editoria {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-bottom: 28px;
+        }
+
+        .manchete {
+            border-top: 3px solid #222;
+            border-bottom: 3px solid #222;
+            padding: 25px 10px;
+            margin-bottom: 30px;
+        }
+
+        .etiqueta {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .manchete h1 {
+            margin: 0 0 15px;
+            font-size: clamp(30px, 5vw, 58px);
+            line-height: 1.08;
+        }
+
+        .resumo {
+            font-size: clamp(17px, 2vw, 23px);
+            line-height: 1.55;
+            margin: 0 0 15px;
+        }
+
+        .data-noticia {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 18px;
+        }
+
+        .leia {
+            display: inline-block;
+            padding: 12px 18px;
+            border: 2px solid #222;
+            color: #111;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            background: #e3dcc8;
+        }
+
+        .leia:hover {
+            background: #222;
+            color: white;
+        }
+
+        .noticias {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #555;
+            padding: 20px;
+            background: #eee7d6;
+        }
+
+        .card h2 {
+            font-size: clamp(22px, 3vw, 34px);
+            line-height: 1.15;
+            margin: 8px 0 12px;
+        }
+
+        .card .resumo {
+            font-size: 17px;
+        }
+
+        .card .leia {
+            padding: 9px 13px;
+            font-size: 13px;
+        }
+
+        .mensagem {
+            text-align: center;
+            border: 2px solid #555;
+            padding: 35px 20px;
+            margin-top: 25px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navegacao {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 3px double #222;
+        }
+
+        .navegacao a {
+            text-decoration: none;
+            color: #111;
+            border: 2px solid #222;
+            padding: 13px 18px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            background: #e3dcc8;
+        }
+
+        .navegacao a:hover {
+            background: #222;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 2px solid #222;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 800px) {
+            .jornal {
+                width: 96%;
+                padding: 22px 18px 30px;
+                margin: 10px auto;
+            }
+
+            .noticias {
+                grid-template-columns: 1fr;
+            }
+
+            .navegacao {
+                flex-direction: column;
+            }
+
+            .navegacao a {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="jornal">
+
+    <header class="cabecalho">
+        <div class="nome-jornal">INTERCONTINENTAL NEWS</div>
+        <div class="slogan">O MUNDO EM UMA SÓ EDIÇÃO</div>
+        <div class="data-edicao" id="dataEdicao">CARREGANDO DATA...</div>
+    </header>
+
+    <main>
+        <div class="titulo-editoria">ESPORTES</div>
+
+        <div class="linha-editoria">
+            ESPORTES • EDIÇÃO AUTOMÁTICA • PÁGINA 05
+        </div>
+
+        <section id="conteudo">
+            <div class="mensagem">CARREGANDO NOTÍCIAS...</div>
+        </section>
+
+        <nav class="navegacao">
+            <a href="hoje-na-historia.html">← ANTERIOR — HOJE NA HISTÓRIA</a>
+            <a href="politica.html">PRÓXIMA — POLÍTICA →</a>
+        </nav>
+    </main>
+
+    <footer>
+        INTERCONTINENTAL NEWS • O MUNDO EM UMA SÓ EDIÇÃO
+    </footer>
+
+</div>
+
+<script>
+"use strict";
+
+/* DATA ATUAL DA EDIÇÃO — HORÁRIO DE BRASÍLIA */
+function atualizarDataEdicao() {
+    const agora = new Date();
+
+    const data = new Intl.DateTimeFormat("pt-BR", {
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+        timeZone: "America/Sao_Paulo"
+    }).format(agora);
+
+    document.getElementById("dataEdicao").textContent =
+        data.toLocaleUpperCase("pt-BR");
+}
+
+/* FORMATA A DATA ORIGINAL DE CADA NOTÍCIA */
+function formatarDataNoticia(valor) {
+    if (!valor) {
+        return "";
+    }
+
+    const texto = String(valor).trim();
+
+    if (/^\d{4}-\d{2}-\d{2}(T|$)/.test(texto)) {
+        const data = new Date(texto);
+
+        if (!Number.isNaN(data.getTime())) {
+            return new Intl.DateTimeFormat("pt-BR", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                timeZone: "America/Sao_Paulo"
+            }).format(data);
+        }
+    }
+
+    return texto;
+}
+
+/* ESCAPA TEXTO SIMPLES PARA EXIBIÇÃO SEGURA */
+function escapar(texto) {
+    if (texto === null || texto === undefined) {
+        return "";
+    }
+
+    return String(texto)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+/* CRIA UM LINK SOMENTE QUANDO O ENDEREÇO É VÁLIDO */
+function criarLink(endereco, textoBotao, classe) {
+    if (!endereco) {
+        return "";
+    }
+
+    try {
+        const url = new URL(endereco);
+
+        if (url.protocol !== "https:" && url.protocol !== "http:") {
+            return "";
+        }
+
+        return `
+            <a class="${classe}"
+               href="${escapar(url.href)}"
+               target="_blank"
+               rel="noopener noreferrer">
+                ${escapar(textoBotao)}
+            </a>
+        `;
+    } catch (erro) {
+        return "";
+    }
+}
+
+/* MONTA UM CARTÃO DE NOTÍCIA */
+function montarNoticia(noticia, indice, principal) {
+    const titulo = escapar(noticia.titulo || noticia.title || "Título não disponível");
+    const descricao = escapar(noticia.descricao || noticia.description || "Descrição não disponível.");
+    const data = formatarDataNoticia(noticia.data);
+    const classe = principal ? "manchete" : "card";
+    const tituloTag = principal ? "h1" : "h2";
+    const etiqueta = principal
+        ? "MANCHETE"
+        : "ESPORTES • NOTÍCIA " + (indice + 1);
+
+    const link = criarLink(
+        noticia.link || noticia.url,
+        principal ? "LEIA A MATÉRIA COMPLETA →" : "LEIA MAIS →",
+        "leia"
+    );
+
+    return `
+        <article class="${classe}">
+            <div class="etiqueta">${etiqueta}</div>
+            <${tituloTag}>${titulo}</${tituloTag}>
+            <p class="resumo">${descricao}</p>
+            ${data ? `<div class="data-noticia">Publicado em ${escapar(data)}</div>` : ""}
+            ${link}
+        </article>
+    `;
+}
+
+/* CARREGA AS NOTÍCIAS DE ESPORTES */
+async function carregarEsportes() {
+    const conteudo = document.getElementById("conteudo");
+
+    try {
+        const resposta = await fetch("noticias.json?tempo=" + Date.now());
+
+        if (!resposta.ok) {
+            throw new Error("Não foi possível carregar noticias.json");
+        }
+
+        const dados = await resposta.json();
+
+        if (!Array.isArray(dados)) {
+            throw new Error("O formato do arquivo noticias.json é inválido");
+        }
+
+        const bloco = dados.find(function(item) {
+            return item.editoria &&
+                String(item.editoria).trim().toLocaleLowerCase("pt-BR") === "esportes";
+        });
+
+        if (!bloco) {
+            conteudo.innerHTML = `
+                <div class="mensagem">
+                    NENHUMA NOTÍCIA DE ESPORTES ENCONTRADA.
+                </div>
+            `;
+            return;
+        }
+
+        const noticias = Array.isArray(bloco.noticias)
+            ? bloco.noticias
+            : [];
+
+        const manchete = bloco.manchete || noticias[0];
+
+        if (!manchete) {
+            conteudo.innerHTML = `
+                <div class="mensagem">
+                    A EDITORIA ESPORTES FOI ENCONTRADA,
+                    MAS NÃO HÁ NOTÍCIAS DISPONÍVEIS.
+                </div>
+            `;
+            return;
+        }
+
+        let html = montarNoticia(manchete, 0, true);
+
+        const outrasNoticias = noticias.filter(function(noticia) {
+            return noticia !== manchete;
+        });
+
+        if (outrasNoticias.length > 0) {
+            html += '<section class="noticias">';
+
+            outrasNoticias.forEach(function(noticia, indice) {
+                html += montarNoticia(noticia, indice + 1, false);
+            });
+
+            html += "</section>";
+        }
+
+        conteudo.innerHTML = html;
+
+    } catch (erro) {
+        console.error("Erro ao carregar Esportes:", erro);
+
+        conteudo.innerHTML = `
+            <div class="mensagem">
+                ERRO AO CARREGAR AS NOTÍCIAS.
+                <br><br>
+                Verifique se o servidor local está funcionando
+                e se o arquivo noticias.json está disponível.
+            </div>
+        `;
+    }
+}
+
+atualizarDataEdicao();
+carregarEsportes();
+</script>
+
+</body>
+</html>

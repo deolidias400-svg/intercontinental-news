@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Política — Intercontinental News</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #e8dfc9;
+            color: #222;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .jornal {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: #f7f1df;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.25);
+            border: 1px solid #b8aa8a;
+        }
+
+        .cabecalho {
+            text-align: center;
+            border-bottom: 4px double #222;
+            padding-bottom: 15px;
+        }
+
+        .nome-jornal {
+            font-size: 42px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .slogan {
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        .data {
+            margin-top: 12px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .editoria {
+            text-align: center;
+            margin-top: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #222;
+        }
+
+        .editoria h2 {
+            margin: 0;
+            font-size: 32px;
+            letter-spacing: 3px;
+        }
+
+        .edicao {
+            margin-top: 8px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .conteudo {
+            margin-top: 30px;
+        }
+
+        .manchete {
+            text-align: center;
+            border-bottom: 1px solid #999;
+            padding-bottom: 30px;
+        }
+
+        .manchete h1 {
+            font-size: 38px;
+            margin: 10px 0;
+        }
+
+        .descricao {
+            font-size: 19px;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .data-noticia {
+            margin-top: 15px;
+            font-size: 16px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .ler-materia {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 12px 20px;
+            background: #123b64;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #0d2945;
+        }
+
+        .ler-materia:hover {
+            background: #1c568d;
+        }
+
+        .status {
+            text-align: center;
+            font-style: italic;
+            margin: 25px 0;
+        }
+
+        .navegacao {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 3px double #222;
+        }
+
+        .navegacao a {
+            display: block;
+            flex: 1;
+            padding: 15px;
+            background: #e0d5b9;
+            color: #222;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            font-size: 17px;
+            border: 1px solid #9d9278;
+        }
+
+        .navegacao a:hover {
+            background: #d0c4a5;
+        }
+
+        .rodape {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 15px;
+            border-top: 2px solid #222;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .erro {
+            text-align: center;
+            padding: 30px;
+            font-size: 18px;
+            color: #8b0000;
+        }
+
+        @media (max-width: 700px) {
+            .jornal {
+                margin: 0;
+                padding: 18px;
+                box-shadow: none;
+            }
+
+            .nome-jornal {
+                font-size: 28px;
+                letter-spacing: 1px;
+            }
+
+            .slogan {
+                font-size: 14px;
+            }
+
+            .data {
+                font-size: 15px;
+            }
+
+            .editoria h2 {
+                font-size: 25px;
+            }
+
+            .manchete h1 {
+                font-size: 28px;
+            }
+
+            .descricao {
+                font-size: 17px;
+            }
+
+            .navegacao {
+                flex-direction: column;
+            }
+
+            .navegacao a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="jornal">
+
+    <header class="cabecalho">
+        <div class="nome-jornal">INTERCONTINENTAL NEWS</div>
+        <div class="slogan">O MUNDO EM UMA SÓ EDIÇÃO</div>
+        <div class="data" id="data-jornal">CARREGANDO DATA...</div>
+    </header>
+
+    <section class="editoria">
+        <h2>POLÍTICA</h2>
+        <div class="edicao">EDIÇÃO AUTOMÁTICA • PÁGINA 06</div>
+    </section>
+
+    <main class="conteudo">
+        <div id="conteudo-politica">
+            <div class="manchete">
+                <h1 id="titulo-manchete">Política</h1>
+
+                <div class="data-noticia" id="data-noticia"></div>
+
+                <div class="descricao" id="descricao-manchete">
+                    Carregando as notícias de Política desta edição...
+                </div>
+
+                <div id="link-manchete"></div>
+            </div>
+        </div>
+    </main>
+
+    <div class="status" id="status">Carregando edição...</div>
+
+    <nav class="navegacao">
+        <a href="esportes.html">← ANTERIOR — ESPORTES</a>
+        <a href="passatempos.html">PRÓXIMA — PASSATEMPOS →</a>
+    </nav>
+
+    <footer class="rodape">
+        INTERCONTINENTAL NEWS — O MUNDO EM UMA SÓ EDIÇÃO
+    </footer>
+
+</div>
+
+<script>
+"use strict";
+
+/* DATA ATUAL DA EDIÇÃO */
+function atualizarDataJornal() {
+    const elemento = document.getElementById("data-jornal");
+
+    const dataAtual = new Intl.DateTimeFormat("pt-BR", {
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+        timeZone: "America/Sao_Paulo"
+    }).format(new Date());
+
+    elemento.textContent = dataAtual.toLocaleUpperCase("pt-BR");
+}
+
+/* FORMATA A DATA ORIGINAL DA NOTÍCIA */
+function formatarDataNoticia(valor) {
+    if (!valor) {
+        return "";
+    }
+
+    const texto = String(valor).trim();
+
+    /* Tenta interpretar datas ISO, como 2026-10-12T18:03:00-03:00 */
+    const dataISO = /^\d{4}-\d{2}-\d{2}(T|$)/.test(texto);
+
+    if (dataISO) {
+        const data = new Date(texto);
+
+        if (!Number.isNaN(data.getTime())) {
+            return new Intl.DateTimeFormat("pt-BR", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                timeZone: "America/Sao_Paulo"
+            }).format(data);
+        }
+    }
+
+    /* Preserva datas que já estejam escritas em português */
+    return texto;
+}
+
+/* CARREGA A EDITORIA POLÍTICA */
+async function carregarPolitica() {
+    const status = document.getElementById("status");
+    const titulo = document.getElementById("titulo-manchete");
+    const descricao = document.getElementById("descricao-manchete");
+    const dataNoticia = document.getElementById("data-noticia");
+    const linkManchete = document.getElementById("link-manchete");
+
+    try {
+        const resposta = await fetch(
+            "noticias.json?cache=" + Date.now()
+        );
+
+        if (!resposta.ok) {
+            throw new Error("Não foi possível carregar noticias.json");
+        }
+
+        const dados = await resposta.json();
+
+        if (!Array.isArray(dados)) {
+            throw new Error("O formato de noticias.json não é válido");
+        }
+
+        const politica = dados.find(item =>
+            item.editoria &&
+            String(item.editoria).trim().toLocaleLowerCase("pt-BR") === "política"
+        );
+
+        if (!politica) {
+            titulo.textContent = "Política";
+            descricao.textContent =
+                "Nenhuma notícia de Política foi encontrada nesta edição.";
+            status.textContent = "EDITORIA SEM NOTÍCIAS";
+            dataNoticia.textContent = "";
+            linkManchete.replaceChildren();
+            return;
+        }
+
+        const manchete = politica.manchete ||
+            (Array.isArray(politica.noticias) && politica.noticias.length
+                ? politica.noticias[0]
+                : null);
+
+        if (!manchete) {
+            titulo.textContent = "Política";
+            descricao.textContent =
+                "A editoria foi encontrada, mas não há notícia disponível.";
+            status.textContent = "EDITORIA SEM MANCHETE";
+            dataNoticia.textContent = "";
+            linkManchete.replaceChildren();
+            return;
+        }
+
+        /* TÍTULO DA MATÉRIA */
+        titulo.textContent =
+            manchete.titulo || manchete.title || "Política";
+
+        /* DATA ORIGINAL DE PUBLICAÇÃO */
+        const dataOriginal = manchete.data || politica.data || "";
+        const dataFormatada = formatarDataNoticia(dataOriginal);
+
+        dataNoticia.textContent = dataFormatada
+            ? "Publicado em " + dataFormatada
+            : "";
+
+        /* DESCRIÇÃO DA MATÉRIA */
+        const textoDescricao =
+            manchete.descricao || manchete.description || "";
+
+        if (textoDescricao) {
+            descricao.innerHTML = textoDescricao;
+        } else {
+            descricao.textContent = "Descrição não disponível.";
+        }
+
+        /* LINK PARA A FONTE ORIGINAL */
+        linkManchete.replaceChildren();
+
+        const endereco = manchete.link || manchete.url || "";
+
+        if (endereco) {
+            try {
+                const url = new URL(endereco);
+
+                if (url.protocol === "https:" || url.protocol === "http:") {
+                    const link = document.createElement("a");
+                    link.className = "ler-materia";
+                    link.href = url.href;
+                    link.target = "_blank";
+                    link.rel = "noopener noreferrer";
+                    link.textContent = "LER MATÉRIA COMPLETA →";
+                    linkManchete.appendChild(link);
+                }
+            } catch (erroLink) {
+                console.warn("Link da matéria inválido:", erroLink);
+            }
+        }
+
+        status.textContent = "EDITORIA ATUALIZADA";
+
+    } catch (erro) {
+        console.error("Erro ao carregar Política:", erro);
+
+        titulo.textContent = "Política";
+        descricao.textContent =
+            "Não foi possível carregar as notícias de Política. " +
+            "Verifique se o servidor está funcionando e se noticias.json está disponível.";
+
+        dataNoticia.textContent = "";
+        linkManchete.replaceChildren();
+        status.textContent = "ERRO AO CARREGAR A EDITORIA";
+    }
+}
+
+/* INICIALIZA A PÁGINA */
+atualizarDataJornal();
+carregarPolitica();
+</script>
+
+</body>
+</html>

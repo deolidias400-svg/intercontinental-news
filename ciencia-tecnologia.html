@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciência & Tecnologia — Intercontinental News</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#d4ccb9;color:#171717;font-family:Georgia,"Times New Roman",serif;padding:25px 10px}
+.jornal{width:min(1450px,96%);margin:auto;background:#f3ead5;border:8px double #17212b;box-shadow:0 15px 45px rgba(0,0,0,.35);padding:28px}
+.topo{border-bottom:4px solid #17212b;padding-bottom:18px}
+.linha-superior{display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1.5px}
+.logo-imagem{width:180px;max-width:100%;height:auto;display:block}
+.marca{text-align:center;margin:18px 0 10px}
+.marca h1{font-size:clamp(42px,7vw,92px);line-height:.95;letter-spacing:3px;text-transform:uppercase;color:#155e75;font-weight:900}
+.subtitulo{text-align:center;font-family:Arial,sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;margin-top:12px;color:#444}
+.edicao{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:2px solid #222;border-bottom:2px solid #222;margin-top:20px;padding:10px 0;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:1px}
+.manchete{margin-top:28px;padding-bottom:24px;border-bottom:3px solid #222}
+.selo{display:inline-block;background:#155e75;color:white;padding:7px 14px;font-family:Arial,sans-serif;font-size:12px;font-weight:bold;letter-spacing:2px;margin-bottom:15px}
+.manchete h2{font-size:clamp(32px,5vw,66px);line-height:1.05;max-width:1150px}
+.manchete p{max-width:1050px;margin-top:18px;font-size:20px;line-height:1.5;color:#383838}
+.data-noticia{font-family:Arial,sans-serif;font-size:12px!important;margin-top:12px!important;color:#666!important}
+.imagem-principal{margin-top:25px;min-height:300px;background:radial-gradient(circle at 50% 50%,#245b70,#10222b 60%,#081218);border:5px solid #17212b;display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;overflow:hidden}
+.imagem-principal::before{content:"⚛";position:absolute;font-size:300px;opacity:.07}
+.imagem-conteudo{position:relative;z-index:2;padding:20px}
+.imagem-conteudo .icone{font-size:75px;display:block;margin-bottom:15px}
+.imagem-conteudo strong{display:block;font-family:Arial,sans-serif;font-size:20px;letter-spacing:3px}
+.imagem-conteudo span:not(.icone){display:block;margin-top:8px;font-family:Arial,sans-serif;font-size:12px;letter-spacing:2px;opacity:.8}
+.colunas{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+.bloco{border-top:5px solid #155e75;padding-top:12px;overflow-wrap:anywhere}
+.bloco h3{font-size:25px;text-transform:uppercase;margin-bottom:10px}
+.bloco p{font-size:17px;line-height:1.55;color:#333}
+.tag{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:1.5px;color:#155e75;margin-bottom:7px}
+.link-noticia{display:inline-block;margin-top:12px;color:#155e75;font-family:Arial,sans-serif;font-weight:bold;font-size:13px;text-decoration:underline}
+.painel{margin-top:30px;border:3px solid #222;background:#e3ddd0;padding:20px}
+.painel-titulo{text-align:center;font-family:Arial,sans-serif;font-weight:900;font-size:18px;letter-spacing:3px;text-transform:uppercase;border-bottom:2px solid #222;padding-bottom:12px;margin-bottom:18px}
+.tecnologias{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.tecnologia{background:#f8f0df;border:1px solid #777;padding:18px;text-align:center}
+.tecnologia .icone{font-size:35px;display:block;margin-bottom:8px}
+.tecnologia strong{display:block;font-family:Arial,sans-serif;font-size:14px;letter-spacing:1px}
+.tecnologia span:last-child{display:block;margin-top:7px;font-family:Arial,sans-serif;font-size:11px;color:#555}
+.destaques{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:30px}
+.destaque{padding:25px;border:3px solid #222;background:#f8f0df;overflow-wrap:anywhere}
+.destaque h3{font-size:28px;margin-bottom:10px;text-transform:uppercase}
+.destaque p{font-size:17px;line-height:1.55}
+.lista-noticias{margin-top:30px;border-top:4px solid #17212b;padding-top:18px}
+.lista-noticias h2{font-size:28px;text-transform:uppercase;margin-bottom:18px}
+.noticia-secundaria{padding:18px 0;border-bottom:1px solid #8b806d}
+.noticia-secundaria h3{font-size:23px;line-height:1.2}
+.noticia-secundaria p{font-size:16px;line-height:1.5;margin-top:8px;color:#383838}
+.noticia-secundaria .data-noticia{margin-top:8px!important}
+.frase{margin-top:30px;background:#155e75;color:white;padding:28px;text-align:center;border:5px solid #b99a45}
+.frase strong{display:block;font-size:clamp(24px,4vw,42px);letter-spacing:2px}
+.frase span{display:block;margin-top:8px;font-family:Arial,sans-serif;font-size:12px;letter-spacing:3px}
+.aviso{padding:18px;background:#e3ddd0;border:1px solid #999;line-height:1.5}
+.navegacao{display:flex;justify-content:space-between;gap:20px;margin-top:35px}
+.navegacao a{flex:1;text-align:center;text-decoration:none;background:#17212b;color:white;padding:15px;font-family:Arial,sans-serif;font-weight:bold;letter-spacing:1px;transition:.2s}
+.navegacao a:hover{background:#155e75}
+footer{border-top:4px double #222;margin-top:30px;padding-top:15px;text-align:center;font-family:Arial,sans-serif;font-size:11px;font-weight:bold;letter-spacing:2px}
+@media(max-width:900px){.colunas{grid-template-columns:1fr}.tecnologias{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){
+body{padding:8px 4px}.jornal{width:100%;padding:16px;border-width:5px}
+.linha-superior{flex-direction:column;text-align:center}.logo-imagem{width:150px}
+.marca h1{font-size:43px;letter-spacing:1px}.subtitulo{font-size:10px;letter-spacing:2px}
+.edicao{flex-direction:column;text-align:center}.manchete h2{font-size:34px}
+.manchete p{font-size:17px}.imagem-principal{min-height:240px}
+.tecnologias,.destaques{grid-template-columns:1fr}.navegacao{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+<div class="jornal">
+
+<header class="topo">
+    <div class="linha-superior">
+        <span>CIÊNCIA • INOVAÇÃO • TECNOLOGIA</span>
+        <img class="logo-imagem" src="logo-intercontinental-news.png" alt="Intercontinental News">
+        <span>PÁGINA 10</span>
+    </div>
+
+    <div class="marca">
+        <h1>Ciência & Tecnologia</h1>
+        <div class="subtitulo">Ciência • Inovação • Tecnologia • Espaço • Inteligência Artificial</div>
+    </div>
+
+    <div class="edicao">
+        <span id="data-edicao">CARREGANDO DATA...</span>
+        <span>CIÊNCIA & TECNOLOGIA • EDIÇÃO AUTOMÁTICA • PÁGINA 10</span>
+    </div>
+</header>
+
+<section class="manchete">
+    <div class="selo">DESTAQUE CIENTÍFICO</div>
+    <h2 id="titulo-principal">Carregando notícias de Ciência e Tecnologia...</h2>
+    <p id="descricao-principal">A Redação Digital está consultando as notícias disponíveis nesta edição.</p>
+    <p id="data-principal" class="data-noticia"></p>
+    <a id="link-principal" class="link-noticia" href="#" target="_blank" rel="noopener noreferrer" hidden>Leia a notícia na fonte original →</a>
+</section>
+
+<section class="imagem-principal">
+    <div class="imagem-conteudo">
+        <span class="icone">🔬</span>
+        <strong>CIÊNCIA EM DESTAQUE</strong>
+        <span>CONHECIMENTO • DESCOBERTAS • INOVAÇÃO</span>
+    </div>
+</section>
+
+<section class="colunas" id="colunas-noticias">
+    <article class="bloco">
+        <div class="tag">INTELIGÊNCIA ARTIFICIAL</div>
+        <h3>Conhecimento em evolução</h3>
+        <p>Esta área será preenchida com notícias disponíveis na edição.</p>
+    </article>
+    <article class="bloco">
+        <div class="tag">ESPAÇO</div>
+        <h3>Descobertas científicas</h3>
+        <p>Acompanhe as novidades científicas e tecnológicas publicadas pelas fontes.</p>
+    </article>
+    <article class="bloco">
+        <div class="tag">INOVAÇÃO</div>
+        <h3>Novas tecnologias</h3>
+        <p>As notícias desta área serão carregadas automaticamente quando estiverem disponíveis.</p>
+    </article>
+</section>
+
+<section class="painel">
+    <div class="painel-titulo">PAINEL DE TECNOLOGIA</div>
+    <div class="tecnologias">
+        <div class="tecnologia"><span class="icone">🤖</span><strong>IA</strong><span>Inteligência Artificial</span></div>
+        <div class="tecnologia"><span class="icone">🚀</span><strong>ESPAÇO</strong><span>Exploração espacial</span></div>
+        <div class="tecnologia"><span class="icone">🧬</span><strong>CIÊNCIA</strong><span>Descobertas e pesquisas</span></div>
+        <div class="tecnologia"><span class="icone">💻</span><strong>DIGITAL</strong><span>Tecnologia e inovação</span></div>
+    </div>
+</section>
+
+<section class="lista-noticias">
+    <h2>Outras notícias da editoria</h2>
+    <div id="noticias-secundarias">
+        <p class="aviso">Aguarde: estamos consultando o arquivo de notícias desta edição.</p>
+    </div>
+</section>
+
+<section class="destaques">
+    <article class="destaque">
+        <h3>Ciência brasileira</h3>
+        <p>Universidades, pesquisadores e instituições brasileiras contribuem para o avanço do conhecimento científico. Esta página divulgará notícias verificáveis disponibilizadas pelas fontes da redação.</p>
+    </article>
+    <article class="destaque">
+        <h3>O mundo tecnológico</h3>
+        <p>Acompanhe descobertas, pesquisas e novidades tecnológicas por meio das notícias disponíveis na edição do Intercontinental News.</p>
+    </article>
+</section>
+
+<section class="frase">
+    <strong>O FUTURO COMEÇA COM O CONHECIMENTO.</strong>
+    <span>INTERCONTINENTAL NEWS • CIÊNCIA & TECNOLOGIA</span>
+</section>
+
+<nav class="navegacao">
+    <a href="horoscopo.html">← HORÓSCOPO</a>
+    <a href="index.html">CAPA</a>
+    <a href="brasil.html">BRASIL →</a>
+</nav>
+
+<footer>
+    INTERCONTINENTAL NEWS • PÁGINA 10 • EDIÇÃO AUTOMÁTICA • CIÊNCIA & TECNOLOGIA
+</footer>
+</div>
+
+<script>
+"use strict";
+
+function atualizarDataEdicao() {
+    const agora = new Date();
+    let data = new Intl.DateTimeFormat("pt-BR", {
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+        timeZone: "America/Sao_Paulo"
+    }).format(agora);
+
+    data = data.replace(/^./, letra => letra.toUpperCase());
+    document.getElementById("data-edicao").textContent = data;
+}
+
+function textoSeguro(valor, alternativa = "") {
+    if (valor === null || valor === undefined) return alternativa;
+    if (typeof valor === "string" || typeof valor === "number") {
+        return String(valor).trim() || alternativa;
+    }
+    return alternativa;
+}
+
+function formatarDataNoticia(valor) {
+    if (!valor) return "";
+    const data = new Date(valor);
+    if (Number.isNaN(data.getTime())) return String(valor);
+
+    return new Intl.DateTimeFormat("pt-BR", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+        timeZone: "America/Sao_Paulo"
+    }).format(data);
+}
+
+function limparDescricao(valor) {
+    const elemento = document.createElement("div");
+    elemento.innerHTML = textoSeguro(valor);
+    return (elemento.textContent || elemento.innerText || "").trim();
+}
+
+function obterTitulo(noticia) {
+    return textoSeguro(
+        noticia && (noticia.titulo || noticia.title || noticia.headline),
+        "Notícia sem título"
+    );
+}
+
+function obterDescricao(noticia) {
+    return limparDescricao(
+        noticia && (
+            noticia.descricao ||
+            noticia.resumo ||
+            noticia.summary ||
+            noticia.description ||
+            noticia.conteudo
+        )
+    );
+}
+
+function obterData(noticia) {
+    return noticia && (
+        noticia.data ||
+        noticia.publicado ||
+        noticia.published ||
+        noticia.pubDate ||
+        noticia.date
+    );
+}
+
+function obterLink(noticia) {
+    return textoSeguro(
+        noticia && (noticia.link || noticia.url || noticia.href),
+        ""
+    );
+}
+
+function ehLinkHttpValido(link) {
+    try {
+        const url = new URL(link);
+        return url.protocol === "https:" || url.protocol === "http:";
+    } catch {
+        return false;
+    }
+}
+
+function encontrarEditorias(dados) {
+    if (!Array.isArray(dados)) return [];
+
+    return dados.filter(item => {
+        const nome = textoSeguro(item && item.editoria)
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase()
+            .replace(/&/g, "e")
+            .replace(/\s+/g, " ")
+            .trim();
+
+        return nome === "ciencia e tecnologia" ||
+               nome === "ciencia tecnologia" ||
+               nome === "tecnologia" ||
+               nome === "ciencia";
+    });
+}
+
+function recolherNoticias(grupos) {
+    const resultado = [];
+
+    grupos.forEach(grupo => {
+        if (grupo.manchete && typeof grupo.manchete === "object") {
+            resultado.push(grupo.manchete);
+        }
+
+        if (Array.isArray(grupo.noticias)) {
+            grupo.noticias.forEach(noticia => resultado.push(noticia));
+        } else if (Array.isArray(grupo.itens)) {
+            grupo.itens.forEach(noticia => resultado.push(noticia));
+        } else if (Array.isArray(grupo.articles)) {
+            grupo.articles.forEach(noticia => resultado.push(noticia));
+        }
+    });
+
+    const vistos = new Set();
+    return resultado.filter(noticia => {
+        const chave = obterLink(noticia) || obterTitulo(noticia);
+        if (vistos.has(chave)) return false;
+        vistos.add(chave);
+        return true;
+    });
+}
+
+function mostrarAviso(mensagem) {
+    const aviso = document.createElement("p");
+    aviso.className = "aviso";
+    aviso.textContent = mensagem;
+    document.getElementById("colunas-noticias").replaceChildren();
+    document.getElementById("colunas-noticias").appendChild(aviso);
+    document.getElementById("noticias-secundarias").replaceChildren();
+}
+
+function criarLink(link, texto) {
+    if (!ehLinkHttpValido(link)) return null;
+
+    const a = document.createElement("a");
+    a.className = "link-noticia";
+    a.href = link;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.textContent = texto;
+    return a;
+}
+
+function criarCartao(noticia, indice) {
+    const artigo = document.createElement("article");
+    artigo.className = "bloco";
+
+    const tag = document.createElement("div");
+    tag.className = "tag";
+    tag.textContent = indice === 0 ? "CIÊNCIA E TECNOLOGIA" :
+                     indice === 1 ? "PESQUISA E INOVAÇÃO" : "NOTÍCIA DA EDIÇÃO";
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = obterTitulo(noticia);
+
+    const descricao = document.createElement("p");
+    descricao.textContent = obterDescricao(noticia) || "Consulte a fonte original para obter mais informações.";
+
+    artigo.append(tag, titulo, descricao);
+
+    const data = formatarDataNoticia(obterData(noticia));
+    if (data) {
+        const linhaData = document.createElement("p");
+        linhaData.className = "data-noticia";
+        linhaData.textContent = data;
+        artigo.appendChild(linhaData);
+    }
+
+    const link = criarLink(obterLink(noticia), "Leia na fonte original →");
+    if (link) artigo.appendChild(link);
+
+    return artigo;
+}
+
+function criarNoticiaSecundaria(noticia) {
+    const artigo = document.createElement("article");
+    artigo.className = "noticia-secundaria";
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = obterTitulo(noticia);
+    artigo.appendChild(titulo);
+
+    const descricaoTexto = obterDescricao(noticia);
+    if (descricaoTexto) {
+        const descricao = document.createElement("p");
+        descricao.textContent = descricaoTexto;
+        artigo.appendChild(descricao);
+    }
+
+    const data = formatarDataNoticia(obterData(noticia));
+    if (data) {
+        const linhaData = document.createElement("p");
+        linhaData.className = "data-noticia";
+        linhaData.textContent = data;
+        artigo.appendChild(linhaData);
+    }
+
+    const link = criarLink(obterLink(noticia), "Leia a notícia completa →");
+    if (link) artigo.appendChild(link);
+
+    return artigo;
+}
+
+async function carregarNoticias() {
+    atualizarDataEdicao();
+
+    try {
+        const resposta = await fetch("noticias.json", { cache: "no-store" });
+        if (!resposta.ok) {
+            throw new Error("Não foi possível acessar noticias.json.");
+        }
+
+        const dados = await resposta.json();
+        const grupos = encontrarEditorias(dados);
+        const noticias = recolherNoticias(grupos);
+
+        if (noticias.length === 0) {
+            document.getElementById("titulo-principal").textContent =
+                "Ciência e Tecnologia: notícias em atualização";
+            document.getElementById("descricao-principal").textContent =
+                "Não há notícias desta editoria disponíveis no arquivo desta edição. A página não inventará manchetes; novas notícias aparecerão quando forem recebidas pela redação.";
+            document.getElementById("colunas-noticias").replaceChildren();
+
+            const aviso = document.createElement("p");
+            aviso.className = "aviso";
+            aviso.textContent = "Nenhuma notícia de Ciência e Tecnologia foi encontrada no noticias.json desta edição.";
+            document.getElementById("noticias-secundarias").replaceChildren(aviso);
+            return;
+        }
+
+        const principal = grupos.find(grupo => grupo.manchete) ?
+            grupos.find(grupo => grupo.manchete).manchete : noticias[0];
+
+        document.getElementById("titulo-principal").textContent = obterTitulo(principal);
+        document.getElementById("descricao-principal").textContent =
+            obterDescricao(principal) || "Consulte a fonte original para mais detalhes sobre esta notícia.";
+
+        const dataPrincipal = formatarDataNoticia(obterData(principal));
+        document.getElementById("data-principal").textContent =
+            dataPrincipal ? "Publicado em " + dataPrincipal : "";
+
+        const linkPrincipal = document.getElementById("link-principal");
+        const urlPrincipal = obterLink(principal);
+        if (ehLinkHttpValido(urlPrincipal)) {
+            linkPrincipal.href = urlPrincipal;
+            linkPrincipal.hidden = false;
+        } else {
+            linkPrincipal.hidden = true;
+        }
+
+        const restantes = noticias.filter(noticia => noticia !== principal);
+        const colunas = document.getElementById("colunas-noticias");
+        colunas.replaceChildren();
+
+        restantes.slice(0, 3).forEach((noticia, indice) => {
+            colunas.appendChild(criarCartao(noticia, indice));
+        });
+
+        if (restantes.length === 0) {
+            const aviso = document.createElement("p");
+            aviso.className = "aviso";
+            aviso.textContent = "Há uma manchete disponível, mas nenhuma notícia secundária nesta edição.";
+            colunas.appendChild(aviso);
+        }
+
+        const lista = document.getElementById("noticias-secundarias");
+        lista.replaceChildren();
+
+        const adicionais = restantes.slice(3);
+        if (adicionais.length === 0) {
+            const aviso = document.createElement("p");
+            aviso.className = "aviso";
+            aviso.textContent = "Não há outras notícias desta editoria nesta edição.";
+            lista.appendChild(aviso);
+        } else {
+            adicionais.forEach(noticia => {
+                lista.appendChild(criarNoticiaSecundaria(noticia));
+            });
+        }
+
+    } catch (erro) {
+        console.error("Erro ao carregar Ciência e Tecnologia:", erro);
+        document.getElementById("titulo-principal").textContent =
+            "Não foi possível carregar as notícias";
+        document.getElementById("descricao-principal").textContent =
+            "Confira se o servidor local está funcionando e se o arquivo noticias.json está disponível.";
+        mostrarAviso("Falha ao consultar noticias.json. Inicie o servidor do jornal e tente atualizar a página.");
+    }
+}
+
+carregarNoticias();
+</script>
+</body>
+</html>

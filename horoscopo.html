@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Horóscopo — Intercontinental News</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #e8dfc8;
+            color: #222;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .jornal {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 30px;
+            background: #f7f1df;
+            border: 8px double #222;
+            box-sizing: border-box;
+        }
+
+        .cabecalho {
+            text-align: center;
+            border-bottom: 4px solid #222;
+            padding-bottom: 18px;
+        }
+
+        .cabecalho h1 {
+            margin: 0;
+            font-size: 42px;
+            letter-spacing: 3px;
+        }
+
+        .slogan {
+            margin-top: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .data {
+            margin-top: 14px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .editoria {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .editoria h2 {
+            margin: 0;
+            font-size: 30px;
+            letter-spacing: 2px;
+        }
+
+        .pagina {
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        .conteudo {
+            margin-top: 30px;
+        }
+
+        .conteudo > h1 {
+            font-size: 32px;
+            border-bottom: 2px solid #222;
+            padding-bottom: 8px;
+        }
+
+        .introducao {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .signo {
+            margin: 25px 0;
+            padding: 20px;
+            border: 2px solid #222;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .simbolo {
+            font-size: 38px;
+            margin-bottom: 5px;
+        }
+
+        .signo h2 {
+            margin: 0 0 10px;
+            font-size: 25px;
+        }
+
+        .signo p {
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .mensagem {
+            margin-top: 35px;
+            padding: 20px;
+            border-top: 3px solid #222;
+            border-bottom: 3px solid #222;
+        }
+
+        .mensagem h2 {
+            margin-top: 0;
+        }
+
+        .mensagem p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .navegacao {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 3px solid #222;
+        }
+
+        .navegacao a {
+            color: #222;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .navegacao a:hover {
+            text-decoration: underline;
+        }
+
+        .rodape {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 2px solid #222;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+            .jornal {
+                margin: 10px;
+                padding: 18px;
+                border-width: 5px;
+            }
+
+            .cabecalho h1 {
+                font-size: 30px;
+            }
+
+            .slogan {
+                font-size: 15px;
+            }
+
+            .data {
+                font-size: 16px;
+            }
+
+            .editoria h2 {
+                font-size: 24px;
+            }
+
+            .conteudo > h1 {
+                font-size: 27px;
+            }
+
+            .signo {
+                padding: 16px;
+            }
+
+            .signo h2 {
+                font-size: 22px;
+            }
+
+            .signo p,
+            .introducao,
+            .mensagem p {
+                font-size: 16px;
+            }
+
+            .navegacao {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="jornal">
+
+    <header class="cabecalho">
+        <h1>INTERCONTINENTAL NEWS</h1>
+
+        <div class="slogan">
+            O MUNDO EM UMA SÓ EDIÇÃO
+        </div>
+
+        <div class="data" id="data-edicao">
+            CARREGANDO DATA DA EDIÇÃO...
+        </div>
+    </header>
+
+    <section class="editoria">
+        <h2>HORÓSCOPO</h2>
+
+        <div class="pagina">
+            EDIÇÃO AUTOMÁTICA • PÁGINA 09
+        </div>
+    </section>
+
+    <main class="conteudo">
+
+        <h1>Horóscopo</h1>
+
+        <p class="introducao">
+            <em>As estrelas acompanham você em mais um dia.</em>
+            <br>
+            <small>
+                Conteúdo recreativo: as previsões são sugestões de entretenimento,
+                não garantias sobre acontecimentos futuros.
+            </small>
+        </p>
+
+        <section class="signo">
+            <div class="simbolo">♈</div>
+            <h2>Áries</h2>
+            <p><strong>Hoje:</strong> Um bom momento para tomar iniciativas e transformar ideias em ações.</p>
+        </section>
+
+        <section class="signo">
+            <div class="simbolo">♉</div>
+            <h2>Touro</h2>
+            <p><strong>Hoje:</strong> A tranquilidade pode ajudar você a tomar decisões importantes com segurança.</p>
+        </section>
+
+        <section class="signo">
+            <div class="simbolo">♊</div>
+            <h2>Gêmeos</h2>
+            <p><strong>Hoje:</strong> Conversas e novas informações podem abrir caminhos interessantes.</p>
+        </section>
+
+        <section class="signo">
+            <div class="simbolo">♋</div>
+            <h2>Câncer</h2>
+            <p><strong>Hoje:</strong> Valorize os pequenos momentos e mantenha por perto aquilo que realmente importa.</p>
+        </section>
+
+        <section class="signo">
+            <div class="simbolo">♌</div>
+            <h2>Leão</h2>
+            <p><strong>Hoje:</strong> Sua criatividade pode ganhar destaque. Aproveite para colocar seus projetos em movimento.</p>
+        </section>
+
+        <section class="signo">
+            <div class="simbolo">♍</div>
+            <h2>Virgem</h2>
+            <p><strong>Hoje:</strong> Organização e atenção aos detalhes ajudarão a deixar o dia mais produtivo.</p>
+        </section>
+
+        <section class="signo">
+            <div class="simbolo">♎</div>
+            <h2>Libra</h2>
+            <p><strong>Hoje:</strong> Procure equilíbrio nas decisões e escute também os diferentes pontos de vista.</p>
+        </section>
+
+        <section class="signo">
+            <div class="simbolo">♏</div>
+            <h2>Escorpião</h2>
+            <p><strong>Hoje:</strong> A determinação será uma grande aliada para superar pequenos obstáculos.</p>
+        </section>
+
+        <section class="signo">
+            <div class="simbolo">♐</div>
+            <h2>Sagitário</h2>
+            <p><strong>Hoje:</strong> Novos horizontes podem despertar sua curiosidade. Mantenha a mente aberta.</p>
+        </section>
+
+        <section class="signo">
+            <div class="simbolo">♑</div>
+            <h2>Capricórnio</h2>
+            <p><strong>Hoje:</strong> Persistência e planejamento continuam sendo importantes para seus objetivos.</p>
+        </section>
+
+        <section class="signo">
+            <div class="simbolo">♒</div>
+            <h2>Aquário</h2>
+            <p><strong>Hoje:</strong> Uma ideia diferente pode ser exatamente o que faltava para avançar.</p>
+        </section>
+
+        <section class="signo">
+            <div class="simbolo">♓</div>
+            <h2>Peixes</h2>
+            <p><strong>Hoje:</strong> Intuição e sensibilidade podem ajudar você a perceber oportunidades ao seu redor.</p>
+        </section>
+
+        <section class="mensagem">
+            <h2>Mensagem do Dia</h2>
+            <p>
+                Cada novo dia traz uma nova página.
+                Escreva sua história com coragem, esperança e boas escolhas.
+            </p>
+        </section>
+
+    </main>
+
+    <nav class="navegacao">
+        <a href="passatempos.html">← ANTERIOR — PASSATEMPOS</a>
+        <a href="index.html">📰 VOLTAR À CAPA</a>
+    </nav>
+
+    <footer class="rodape">
+        INTERCONTINENTAL NEWS — O MUNDO EM UMA SÓ EDIÇÃO
+    </footer>
+
+</div>
+
+<script>
+    function atualizarDataEdicao() {
+        const agora = new Date();
+
+        const dataFormatada = new Intl.DateTimeFormat("pt-BR", {
+            weekday: "long",
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+            timeZone: "America/Sao_Paulo"
+        }).format(agora);
+
+        document.getElementById("data-edicao").textContent =
+            dataFormatada.toLocaleUpperCase("pt-BR");
+    }
+
+    atualizarDataEdicao();
+</script>
+
+</body>
+</html>

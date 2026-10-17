@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo — Intercontinental News</title>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: #d8c9a8;
+            color: #171717;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .jornal {
+            max-width: 1050px;
+            margin: 25px auto;
+            padding: 30px;
+            background: #f4ecd8;
+            border: 3px double #222;
+            box-shadow: 0 0 18px rgba(0,0,0,0.25);
+        }
+
+        .cabecalho {
+            text-align: center;
+            border-bottom: 3px double #222;
+            padding-bottom: 18px;
+        }
+
+        .nome-jornal {
+            font-size: 42px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .slogan {
+            margin-top: 8px;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        .data {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .faixa {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+            padding: 10px 0;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            font-weight: bold;
+        }
+
+        .editoria {
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        .pagina { font-size: 14px; }
+
+        .conteudo { padding-top: 25px; }
+
+        .rotulo {
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 38px;
+            line-height: 1.12;
+            margin: 10px 0 18px;
+        }
+
+        .descricao {
+            font-size: 19px;
+            line-height: 1.65;
+            text-align: justify;
+        }
+
+        .data-noticia {
+            margin-top: 18px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .leia {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 12px 18px;
+            border: 2px solid #222;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            background: #e7dcc1;
+        }
+
+        .leia:hover { background: #d7c9a8; }
+
+        .sem-noticias {
+            margin-top: 35px;
+            padding: 25px;
+            border-top: 2px solid #222;
+            border-bottom: 2px solid #222;
+            text-align: center;
+        }
+
+        .sem-noticias h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .sem-noticias p {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .rodape-edicao {
+            margin-top: 35px;
+            padding-top: 15px;
+            border-top: 2px solid #222;
+            font-size: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .navegacao {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 3px double #222;
+        }
+
+        .navegacao a {
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 15px;
+            border: 1px solid #222;
+            background: #e7dcc1;
+        }
+
+        .navegacao a:hover { background: #d7c9a8; }
+
+        @media (max-width: 700px) {
+            .jornal {
+                margin: 10px;
+                padding: 18px;
+            }
+
+            .nome-jornal {
+                font-size: 30px;
+                letter-spacing: 1px;
+            }
+
+            .slogan { font-size: 14px; }
+
+            .faixa {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            h1 { font-size: 29px; }
+
+            .descricao { font-size: 17px; }
+
+            .navegacao { flex-direction: column; }
+
+            .navegacao a { text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+<div class="jornal">
+
+    <header class="cabecalho">
+        <div class="nome-jornal">INTERCONTINENTAL NEWS</div>
+        <div class="slogan">O MUNDO EM UMA SÓ EDIÇÃO</div>
+
+        <div class="data" id="data-edicao">
+            CARREGANDO DATA DA EDIÇÃO...
+        </div>
+
+        <div class="faixa">
+            <div class="editoria">MUNDO</div>
+            <div>MUNDO • EDIÇÃO AUTOMÁTICA</div>
+            <div class="pagina">PÁGINA 03</div>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <div id="resultado">
+            <div class="sem-noticias">
+                <h2>EDIÇÃO INTERNACIONAL</h2>
+                <p>Carregando as notícias internacionais desta edição...</p>
+            </div>
+        </div>
+    </main>
+
+    <div class="rodape-edicao">
+        INTERCONTINENTAL NEWS • O MUNDO EM UMA SÓ EDIÇÃO
+    </div>
+
+    <nav class="navegacao">
+        <a href="brasil.html">← ANTERIOR — BRASIL</a>
+        <a href="hoje-na-historia.html">PRÓXIMA — HOJE NA HISTÓRIA →</a>
+    </nav>
+
+</div>
+
+<script>
+function atualizarDataEdicao() {
+    const dataFormatada = new Intl.DateTimeFormat("pt-BR", {
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+        timeZone: "America/Sao_Paulo"
+    }).format(new Date());
+
+    const elemento = document.getElementById("data-edicao");
+    elemento.textContent = dataFormatada.toLocaleUpperCase("pt-BR");
+}
+
+async function carregarMundo() {
+    const resultado = document.getElementById("resultado");
+
+    try {
+        const resposta = await fetch("noticias.json?_=" + Date.now());
+
+        if (!resposta.ok) {
+            throw new Error("Não foi possível carregar noticias.json");
+        }
+
+        const dados = await resposta.json();
+
+        const mundo = dados.find(item =>
+            item.editoria &&
+            item.editoria.toLowerCase() === "mundo"
+        );
+
+        if (!mundo || !mundo.manchete) {
+            resultado.innerHTML = `
+                <div class="sem-noticias">
+                    <h2>EDIÇÃO INTERNACIONAL</h2>
+                    <p>Nenhuma notícia internacional foi encontrada nesta edição.</p>
+                </div>`;
+            return;
+        }
+
+        const noticia = mundo.manchete;
+
+        const rotulo = document.createElement("div");
+        rotulo.className = "rotulo";
+        rotulo.textContent = "DESTAQUE INTERNACIONAL";
+
+        const titulo = document.createElement("h1");
+        titulo.textContent = noticia.titulo || "Sem título disponível";
+
+        const descricao = document.createElement("div");
+        descricao.className = "descricao";
+        descricao.textContent = noticia.descricao
+            ? noticia.descricao.replace(/<[^>]*>/g, " ").trim()
+            : "Descrição não disponível.";
+
+        resultado.replaceChildren(rotulo, titulo, descricao);
+
+        if (noticia.data) {
+            const dataNoticia = document.createElement("div");
+            dataNoticia.className = "data-noticia";
+            dataNoticia.textContent = noticia.data;
+            resultado.appendChild(dataNoticia);
+        }
+
+        if (noticia.link && /^https?:\/\//i.test(noticia.link)) {
+            const link = document.createElement("a");
+            link.className = "leia";
+            link.href = noticia.link;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = "LEIA A MATÉRIA COMPLETA →";
+            resultado.appendChild(link);
+        }
+
+    } catch (erro) {
+        resultado.innerHTML = `
+            <div class="sem-noticias">
+                <h2>EDIÇÃO NÃO DISPONÍVEL</h2>
+                <p>Não foi possível carregar as notícias internacionais.</p>
+                <p>Verifique se o servidor do jornal está funcionando.</p>
+            </div>`;
+
+        console.error("Erro ao carregar Mundo:", erro);
+    }
+}
+
+atualizarDataEdicao();
+carregarMundo();
+</script>
+</body>
+</html>
